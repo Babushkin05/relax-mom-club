@@ -12,7 +12,9 @@
 <body>
     <header class="header">
         <div class="container">
-            <img src="assets/logo.PNG" alt="Relax Mom Club" class="logo">
+            <a href="#" class="logo">
+                <img src="assets/logo.PNG" alt="Relax Mom Club">
+            </a>
             <p class="tagline">любимая одежда каждой мамы</p>
         </div>
     </header>
@@ -20,67 +22,58 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1 class="hero-title">Ты мама или совсем скоро ей станешь?</h1>
-                <div class="hero-image">
-                    <img src="assets/IMG_4053.JPG" alt="Футболка Relax Mom Club">
-                </div>
-            </div>
-        </section>
-
-        <section class="about">
-            <div class="container">
-                <div class="about-content">
-                    <p class="about-greeting">Привет! Меня зовут Лиза Хайруллина, я мама в декрете и основатель бренда «поддерживающей» одежды</p>
-
-                    <p class="about-text">Если ты искала <em>ту самую</em> футболку — ты её нашла.</p>
-
-                    <p class="about-text">Я создала идеальную oversize-футболку для мам: удобную, стильную и такую, в которой хочется жить каждый день. Эта модель родилась из личного опыта — как вещь, которая действительно спасает, когда хочется выглядеть красиво без лишних усилий.</p>
-
-                    <div class="about-meaning">
-                        <h2>Главный смысл — "time to self"</h2>
-                        <p>Напоминание о том, как важно находить время для себя, заботиться о себе и не забывать о своих мечтах — даже (и особенно) после рождения малыша.</p>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Ты мама или совсем скоро ей станешь?</h1>
+                        <p class="greeting">Привет! Меня зовут Лиза Хайруллина, я мама в декрете и основатель бренда «поддерживающей» одежды</p>
+                        <p>Я создала идеальную oversize-футболку для мам: удобную, стильную и такую, в которой хочется жить каждый день.</p>
+                        <p>Главный смысл — <strong>"time to self"</strong>. Напоминание о том, как важно находить время для себя.</p>
                     </div>
-
-                    <p class="about-final">Ты можешь быть разной — и эта футболка поддержит тебя в этом: на прогулке, в кафе, дома или в поездке с малышом</p>
+                    <div class="hero-image">
+                        <img src="assets/IMG_4053.JPG" alt="Футболка Relax Mom Club" onclick="openLightbox(this.src)">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="gallery">
+        <section class="gallery-section">
             <div class="container">
-                <div class="gallery-grid">
-                    <img src="assets/IMG_4273.jpg" alt="Футболка вид спереди">
-                    <img src="assets/IMG_4505.jpg" alt="Футболка oversize">
-                    <img src="assets/IMG_4506.jpg" alt="Деталь вышивки">
-                    <img src="assets/IMG_4543.jpg" alt="Футболка на модели">
-                    <img src="assets/IMG_4546.jpg" alt="Футболка сзади">
+                <div class="slider">
+                    <button class="slider-btn prev" onclick="slide(-1)">‹</button>
+                    <div class="slider-viewport">
+                        <div class="slider-track" id="sliderTrack">
+                            <img src="assets/IMG_4273.jpg" alt="Футболка" onclick="openLightbox(this.src)">
+                            <img src="assets/IMG_4505.jpg" alt="Футболка" onclick="openLightbox(this.src)">
+                            <img src="assets/IMG_4506.jpg" alt="Футболка" onclick="openLightbox(this.src)">
+                            <img src="assets/IMG_4543.jpg" alt="Футболка" onclick="openLightbox(this.src)">
+                            <img src="assets/IMG_4546.jpg" alt="Футболка" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    <button class="slider-btn next" onclick="slide(1)">›</button>
                 </div>
             </div>
         </section>
 
         <section class="product">
             <div class="container">
-                <div class="price">3 990 ₽</div>
-
-                <ul class="features">
-                    <li>Свободный oversize крой</li>
-                    <li>Плотный премиальный хлопок (компакт пенье)</li>
-                    <li>Стильная вышивка</li>
-                    <li>Качественная печать (без эффекта «плёнки»)</li>
-                    <li>Унисекс модель</li>
-                </ul>
-
-                <p class="shipping">Отправка по всей России</p>
-
-                <a href="https://www.avito.ru/moskva/odezhda_obuv_aksessuary/futbolka_s_printom_na_spine_8011429479" target="_blank" rel="noopener" class="order-btn">оформить заказ</a>
+                <div class="product-content">
+                    <div class="price">3 990 ₽</div>
+                    <ul class="features">
+                        <li>Свободный oversize крой</li>
+                        <li>Плотный премиальный хлопок (компакт пенье)</li>
+                        <li>Стильная вышивка</li>
+                        <li>Качественная печать (без эффекта «плёнки»)</li>
+                        <li>Унисекс модель</li>
+                    </ul>
+                    <p class="shipping">Отправка по всей России</p>
+                    <a href="https://www.avito.ru/moskva/odezhda_obuv_aksessuary/futbolka_s_printom_na_spine_8011429479" target="_blank" rel="noopener" class="order-btn">оформить заказ</a>
+                </div>
             </div>
         </section>
 
         <section class="tail">
-            <div class="tail-images">
-                <img src="assets/photo_for_tail.jpeg" alt="">
-                <img src="assets/photo_for_tail_2.jpeg" alt="">
-            </div>
+            <img src="assets/photo_for_tail.jpeg" alt="">
+            <img src="assets/photo_for_tail_2.jpeg" alt="">
         </section>
     </main>
 
@@ -89,5 +82,13 @@
             <p>Relax Mom Club © 2024</p>
         </div>
     </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">×</span>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
