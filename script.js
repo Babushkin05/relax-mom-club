@@ -1,16 +1,26 @@
 // Slider
 let position = 0;
-const slideWidth = 296; // 280px + 16px gap
+
+function getSlideWidth() {
+    const img = document.querySelector('.slider-track img');
+    if (!img) return 296;
+    return img.offsetWidth + 16; // ширина + gap
+}
 
 function slide(direction) {
     const track = document.getElementById('sliderTrack');
     const images = track.querySelectorAll('img');
-    const maxPosition = -(images.length - 3) * slideWidth;
+    const slideWidth = getSlideWidth();
+    const viewportWidth = track.parentElement.offsetWidth;
+    const maxPosition = Math.max(0, (images.length * slideWidth) - viewportWidth - 16);
 
-    position += direction * slideWidth;
-    position = Math.max(maxPosition, Math.min(0, position));
+    if (direction === 1) {
+        position = Math.min(position + slideWidth, maxPosition);
+    } else {
+        position = Math.max(position - slideWidth, 0);
+    }
 
-    track.style.transform = `translateX(${position}px)`;
+    track.style.transform = `translateX(-${position}px)`;
 }
 
 // Lightbox
@@ -35,14 +45,13 @@ document.addEventListener('keydown', (e) => {
 
 // Touch swipe for slider
 let touchStartX = 0;
-let touchEndX = 0;
 
 document.querySelector('.slider-viewport').addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
 });
 
 document.querySelector('.slider-viewport').addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
+    const touchEndX = e.changedTouches[0].screenX;
     if (touchStartX - touchEndX > 50) slide(1);
     if (touchEndX - touchStartX > 50) slide(-1);
 });
